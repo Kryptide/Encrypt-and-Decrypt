@@ -2,7 +2,7 @@
 color 0A
 type ASCII\decrypt_art.txt
 echo.
-setlocal
+setlocal enabledelayedexpansion
 
 rem Set variables
 set "dir=%CD%\File(s) to Decrypt"  rem Use the current directory as the default directory
@@ -13,7 +13,7 @@ echo Encrypted files in directory: %dir%
 set "num=0"
 for %%f in ("%dir%\*.enc") do (
   set /a "num+=1"
-  echo [%num%] %%~nxf
+  echo [!num!] %%~nxf
 )
 
 rem Prompt for file selection
@@ -24,7 +24,7 @@ set "selected_file="
 set "num=0"
 for %%f in ("%dir%\*.enc") do (
   set /a "num+=1"
-  if %num% equ %selection% (
+  if !num! equ %selection% (
     set "selected_file=%%~f"
     goto :break
   )
@@ -59,4 +59,3 @@ if /i "%delete_encrypted_file%"=="y" (
 
 endlocal
 exit /b
-
