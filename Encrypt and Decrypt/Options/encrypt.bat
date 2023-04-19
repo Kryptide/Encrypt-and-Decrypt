@@ -1,8 +1,8 @@
 @echo off
+setlocal enabledelayedexpansion
 color 0C
 type ASCII\encrypt_art.txt
 echo.
-setlocal
 
 rem Set variables
 set "openssl_path=C:\Program Files\OpenSSL-Win64\bin\openssl.exe"  rem Update this with the path to your OpenSSL executable
@@ -13,7 +13,7 @@ echo Files in directory: %dir%
 set "num=0"
 for /f "delims=" %%f in ('dir /b "%dir%" ^| findstr /v /i "\.enc$"') do (
   set /a "num+=1"
-  echo [%num%] %%~nxf
+  echo [!num!] %%~nxf
 )
 
 rem Prompt for file selection
@@ -24,7 +24,7 @@ set "selected_file="
 set "num=0"
 for /f "delims=" %%f in ('dir /b "%dir%" ^| findstr /v /i "\.enc$"') do (
   set /a "num+=1"
-  if %num% equ %selection% (
+  if !num! equ %selection% (
     set "selected_file=%dir%\%%~f"
     goto :break
   )
