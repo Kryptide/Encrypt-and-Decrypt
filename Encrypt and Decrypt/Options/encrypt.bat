@@ -8,7 +8,7 @@ echo.
 
 
 rem Set variables
-set "openssl_path=C:\Program Files\OpenSSL-Win64\bin\openssl.exe"  rem Update this with the path to your OpenSSL executable
+set "openssl_path=%SystemDrive%\Program Files\OpenSSL-Win64\bin\openssl.exe"  rem Update this with the path to your OpenSSL executable
 set "dir=%cd%\File(s) to Encrypt"  rem Use the current directory as the default directory
 
 rem List files in directory
