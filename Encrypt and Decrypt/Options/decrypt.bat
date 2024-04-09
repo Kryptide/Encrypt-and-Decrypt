@@ -8,7 +8,7 @@ setlocal enabledelayedexpansion
 
 rem Set variables
 set "dir=%CD%\File(s) to Decrypt"  rem Use the current directory as the default directory
-set "openssl_path=C:\Program Files\OpenSSL-Win64\bin\openssl.exe"  rem Update this with the path to your OpenSSL executable
+set "openssl_path=%SystemDrive%\Program Files\OpenSSL-Win64\bin\openssl.exe"  rem Update this with the path to your OpenSSL executable
 
 rem List encrypted files in directory
 echo Encrypted files in directory: %dir%
