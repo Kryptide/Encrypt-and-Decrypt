@@ -5,7 +5,7 @@ setlocal
 type ASCII\openssl_art.txt 
 echo.
 rem Set variables
-set "openssl_url=https://slproweb.com/download/Win64OpenSSL_Light-3_2_1.exe"
+set "openssl_url=https://slproweb.com/download/Win64OpenSSL_Light-3_4_1.exe"
 set "openssl_file=%temp%\Win64OpenSSL.exe"
 set "openssl_path=%SystemDrive%\Program Files\OpenSSL-Win64\bin\openssl.exe"
 
